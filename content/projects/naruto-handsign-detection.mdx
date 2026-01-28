@@ -1,0 +1,24 @@
+---
+title: "Naruto Handsign Detection"
+date: "2024-09-01"
+period: "Sep. 2024 - Present"
+tags: ["Computer Vision", "ML", "Realtime"]
+stack: ["PyTorch", "YOLOv5", "OpenCV", "Mediapipe", "Roboflow", "GitHub"]
+image: "/projects/chalkboard-dashboard.jpg"
+summary: "YOLOv5-based hand sign detection that triggers real-time jutsu logic from webcam input."
+highlights:
+  - "Engineered a YOLOv5-based object detection pipeline using PyTorch to classify 12 Naruto hand signs from webcam feed, triggering jutsu logic in real time."
+  - "Rebuilt original Mediapipe + RandomForest pipeline, replacing unreliable landmark detection with YOLOv5's generalized spatial detection; converted dataset structure from pickle to annotated .yaml using Roboflow for scalable model training."
+  - "Augmented training data with my own custom image rotation, hue jittering, and frame-interval screenshots using OpenCV; reduced overfitting through randomization and variance injection."
+---
+
+## Overview
+
+Engineered a YOLOv5 pipeline to classify 12 Naruto hand signs from live webcam frames and drive
+real-time jutsu logic. Rebuilt the earlier Mediapipe + RandomForest approach to improve robustness,
+and converted datasets to annotated YAML with Roboflow for scalable training.
+
+## Highlights
+
+- Augmented training data with rotation, hue jittering, and frame-interval captures in OpenCV.
+- Reduced overfitting through randomized variance injection and broader spatial detection.

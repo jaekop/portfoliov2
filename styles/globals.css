@@ -1,0 +1,110 @@
+@import "./tokens.css";
+@import "./textures.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-body antialiased;
+}
+
+.dark body {
+  @apply bg-paper text-ink;
+}
+
+* {
+  scrollbar-color: color-mix(in srgb, var(--graphite) 60%, transparent) transparent;
+}
+
+a {
+  @apply text-ink underline-offset-4;
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
+.handwritten-title {
+  @apply font-display tracking-wide uppercase;
+}
+
+.split-line {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.sketch-divider {
+  height: 1px;
+  background-image: linear-gradient(90deg, transparent, color-mix(in srgb, var(--graphite) 70%, transparent), transparent);
+}
+
+.glass-panel {
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+.footer-replay {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+
+.tile-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tile-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.25), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.tile-card:hover::after,
+.tile-card:focus-visible::after {
+  opacity: 1;
+}
+
+.tile-card:hover {
+  transform: translateY(-4px);
+}
+
+.flashcard-stage {
+  perspective: 1400px;
+}
+
+.flashcard {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.mdx-content h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+}
+
+.mdx-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.mdx-content p {
+  color: color-mix(in srgb, var(--ink) 80%, transparent);
+}
+
+.mdx-content a {
+  text-decoration: underline;
+}
